@@ -3,6 +3,4 @@
       jobs:
         - noop
         
-    gate:
-      jobs:
-        - noop
+   
