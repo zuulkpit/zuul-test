@@ -1,0 +1,7 @@
+- project:
+    name: zuul-group2
+    check:
+      jobs: []
+    gate:
+      jobs: []
+
