@@ -13,6 +13,4 @@
       nodes:
         - name: builder
           label: ubuntu-xenial
-    secrets:
-      - secret1
-
+    
