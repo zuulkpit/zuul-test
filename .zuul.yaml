@@ -1,4 +1,18 @@
 - project:
+    name: madhuripatil2/zuul-test
     check:
       jobs:
-        - Calculator
+        - testjob
+        - noop
+
+- job:
+    name: testjob
+    parent: base
+    run: testjob.yaml
+    nodeset:
+      nodes:
+        - name: builder
+          label: ubuntu-xenial
+    secrets:
+      - secret1
+
