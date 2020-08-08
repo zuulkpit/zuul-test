@@ -1,7 +1,0 @@
-- project:
-    name: zuul-group2
-    check:
-      jobs: Calculator
-    gate:
-      jobs: Calculator
-
