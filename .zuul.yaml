@@ -91,7 +91,7 @@
     window-increase-factor: 2 
 
 - project:
-    name: ashish1211/zuul-test
+    name: madhuripatil2/zuul-test
     check:
       jobs:
         - noop
