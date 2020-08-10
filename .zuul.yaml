@@ -89,6 +89,22 @@
       
     window-floor: 20
     window-increase-factor: 2 
+- pipeline:
+    name: post
+    post-review: true
+    description: This pipeline runs jobs that operate after each change is merged.
+    manager: independent
+    precedence: low
+    trigger:
+      github:
+        - event: push
+          ref: ^refs/heads/.*$
+    success:
+      github:
+        status: 'success'
+    failure:
+      github:
+        status: 'Failure'
 
 - project:
     name: madhuripatil2/zuul-test
