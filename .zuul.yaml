@@ -93,19 +93,37 @@
 - pipeline:
     name: post
     post-review: true
-    description: This pipeline runs jobs that operate after each change is merged.
     manager: independent
-    precedence: low
     trigger:
       github:
-        - event: push
-          ref: ^refs/heads/.*$
+        - event: pull_request
+          action:
+            - opened
+            - changed
+        - event: pull_request
+          action:
+            - comment
+          comment:
+            - '^recheck.*$'
     success:
       github:
-        status: 'success'
+        comment: true
+        status: success
     failure:
       github:
-        status: 'Failure'
+        comment: true
+        status: failure
+    merge-failure:
+      github:
+        comment: true
+        status: failure
+    start:
+      github:
+        comment: true
+        status: pending
+    disabled:
+      github:
+        comment: true
 
 - project:
     name: madhuripatil2/zuul-test
