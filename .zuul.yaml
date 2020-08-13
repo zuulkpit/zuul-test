@@ -126,7 +126,7 @@
         comment: true
 
 - project:
-    name: madhuripatil2/zuul-test
+    name: zuulkpit/zuul-test
     check:
       jobs:
         - noop
