@@ -25,7 +25,6 @@
     failure:
       github:
         status: 'failure'
-      
 
 - pipeline:
     name: gate
@@ -124,4 +123,3 @@
       github:
         status: 'failure'
         comment: true
-
