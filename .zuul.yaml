@@ -1,11 +1,11 @@
-- pipeline:
-       name: check
+- pipeline: 
+    name: check
     description: |
       Newly uploaded patchsets enter this pipeline to receive an
       initial check status.
     manager: independent
     trigger:
-      github:
+      github.com:
         - event: pull_request
           action:
             - opened
@@ -15,16 +15,16 @@
           action: comment
           comment: (?i)^\s*recheck\s*$
     start:
-      github:
+      github.com:
         status: 'pending'
         status-url: "https://zuul.zuul-ci.org/zuul/status.html"
         comment: false
     success:
-      github:
+      github.com:
         status: 'success'
       sqlreporter:
     failure:
-      github:
+      github.com:
         status: 'failure'
       sqlreporter:
 
@@ -38,7 +38,7 @@
     precedence: high
     supercedes: check
     require:
-      github:
+      github.com:
         review:
           # Require an approval from user with write access (e.g. core-reviewer)
           - permission: write
@@ -48,7 +48,7 @@
         open: True
         current-patchset: True
     trigger:
-      github:
+      github.com:
         - event: pull_request_review
           action: submitted
           state: approved
@@ -69,18 +69,18 @@
           label:
             - gate
     start:
-      github:
+      github.com:
         status: 'pending'
         status-url: "https://zuul.zuul-ci.org/zuul/status.html"
         comment: false
     success:
-      github:
+      github.com:
         status: 'success'
         merge: true
         comment: true
       sqlreporter:
     failure:
-      github:
+      github.com:
         status: 'failure'
         comment: true
       sqlreporter:
@@ -94,7 +94,7 @@
     manager: independent
     precedence: low
     trigger:
-      github:
+      github.com:
         - event: push
           ref: ^refs/heads/.*$
     success:
@@ -109,7 +109,7 @@
     precedence: high
     post-review: True
     trigger:
-      github:
+      github.com:
         - event: push
           ref: ^refs/tags/.*$
     success:
