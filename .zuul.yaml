@@ -1,5 +1,5 @@
 - project:
-    name: madhuripatil2/zuul-test
+    name: zuulkpit/zuul-test
     check:
       jobs:
         - testjob
@@ -7,7 +7,7 @@
 
 - job:
     name: testjob
-    parent: base
+    parent: null
     run: testjob.yaml
     nodeset:
       nodes:
