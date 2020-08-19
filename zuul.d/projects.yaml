@@ -1,7 +1,0 @@
-- project:
-    check:
-      jobs:
-        - testjob
-    gate:
-      jobs:
-        - testjob
