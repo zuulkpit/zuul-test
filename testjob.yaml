@@ -1,6 +1,0 @@
-- hosts: all
-  tasks:
-    - name: This is a test task
-      debug:
-        msg: You should see me in the logs.
-    
